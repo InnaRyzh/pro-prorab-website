@@ -610,53 +610,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    async function urlExists(url) {
-        // Prefer HEAD, fallback to lightweight image ping for images
-        try {
-            const res = await fetch(url, { method: 'HEAD' });
-            if (res.ok) return true;
-        } catch (e) { /* fall through */ }
-        // If it's an image extension, try loading via Image()
-        if (/\.(jpe?g|png|webp)$/i.test(url)) {
-            try {
-                await new Promise((resolve, reject) => {
-                    const img = new Image();
-                    img.onload = () => resolve(true);
-                    img.onerror = reject;
-                    img.src = url + (url.includes('?') ? '&' : '?') + 't=' + Date.now();
-                });
-                return true;
-            } catch (e) { /* ignore */ }
-        }
-        return false;
-    }
-
-    async function resolveGalleryList(baseDir, max = 36) {
-        // Check common image formats first; include PDFs for modal view
-        const exts = ['jpg', 'jpeg', 'png', 'webp', 'pdf'];
-        const list = [];
-        let misses = 0;
-        for (let i = 1; i <= max; i++) {
-            let found = false;
-            for (const ext of exts) {
-                const url = `${baseDir}/${i}.${ext}`;
-                // eslint-disable-next-line no-await-in-loop
-                if (await urlExists(url)) {
-                    list.push(url);
-                    found = true;
-                    break;
-                }
-            }
-            if (!found) {
-                misses += 1;
-                if (list.length > 0 && misses >= 5) break; // allow more misses to catch additional files
-            } else {
-                misses = 0;
-            }
-        }
-        return list;
-    }
-
     let currentGalleryKey = null;
     let currentIndex = 0;
 
@@ -664,6 +617,71 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!data) return [];
         return (data.images && data.images.length) ? data.images : data.fallback;
     }
+
+    const GALLERY_MANIFEST_URL = 'images/portfolio/gallery-manifest.json';
+    const GALLERY_MANIFEST_STORAGE_KEY = 'pp-gallery-manifest-v1';
+    const GALLERY_MANIFEST_MAX_AGE = 1000 * 60 * 60 * 12; // 12 hours
+    let galleryManifestPromise = null;
+    let galleryManifest = null;
+
+    function getStoredManifest() {
+        try {
+            const raw = localStorage.getItem(GALLERY_MANIFEST_STORAGE_KEY);
+            if (!raw) return null;
+            const parsed = JSON.parse(raw);
+            if (!parsed || !parsed.data || !parsed.timestamp) return null;
+            if (Date.now() - parsed.timestamp > GALLERY_MANIFEST_MAX_AGE) return null;
+            return parsed.data;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    function storeManifest(data) {
+        try {
+            localStorage.setItem(GALLERY_MANIFEST_STORAGE_KEY, JSON.stringify({
+                data,
+                timestamp: Date.now()
+            }));
+        } catch (e) { /* ignore quota errors */ }
+    }
+
+    function loadGalleryManifest() {
+        if (galleryManifestPromise) return galleryManifestPromise;
+        galleryManifestPromise = (async () => {
+            if (!galleryManifest) {
+                galleryManifest = getStoredManifest();
+            }
+            try {
+                const res = await fetch(`${GALLERY_MANIFEST_URL}?t=${Date.now()}`, { cache: 'no-cache' });
+                if (res.ok) {
+                    const data = await res.json();
+                    galleryManifest = data;
+                    storeManifest(data);
+                }
+            } catch (e) {
+                // keep cached version if network fails
+            }
+            return galleryManifest || {};
+        })();
+        return galleryManifestPromise;
+    }
+
+    function ensureGalleryData(key) {
+        const data = galleryMap[key];
+        if (!data) return Promise.resolve([]);
+        if (data.images && data.images.length) return Promise.resolve(data.images);
+        return loadGalleryManifest()
+            .then(manifest => {
+                const list = manifest && manifest[key] ? manifest[key] : [];
+                if (list.length) data.images = list;
+                return data.images || [];
+            })
+            .catch(() => data.images || []);
+    }
+
+    // Warm up manifest fetch so gallery opens instantly on first tap
+    loadGalleryManifest().catch(() => {});
 
     function highlightActiveThumbnail(idx) {
         if (!galleryThumbnails) return;
@@ -709,30 +727,6 @@ document.addEventListener('DOMContentLoaded', function() {
         highlightActiveThumbnail(currentIndex);
     }
 
-    function ensureGalleryResolved(key, max = 36) {
-        const data = galleryMap[key];
-        if (!data) return Promise.resolve([]);
-        const resolvedMax = data._resolvedMax || 0;
-        if (resolvedMax >= max) return Promise.resolve(data.images || []);
-        if (data._resolving) {
-            return data._resolving.then(() => ensureGalleryResolved(key, max));
-        }
-        data._resolving = resolveGalleryList(data.baseDir, max)
-            .then(list => {
-                if (list.length) data.images = list;
-                data._resolvedMax = Math.max(data._resolvedMax || 0, max);
-                return data.images || [];
-            })
-            .catch(() => {
-                data._resolvedMax = Math.max(data._resolvedMax || 0, max);
-                return data.images || [];
-            })
-            .finally(() => {
-                data._resolving = null;
-            });
-        return data._resolving;
-    }
-
     function showGalleryImage(idx) {
         const data = galleryMap[currentGalleryKey];
         if (!data) return;
@@ -772,7 +766,7 @@ document.addEventListener('DOMContentLoaded', function() {
         highlightActiveThumbnail(currentIndex);
     }
 
-    function openGallery(key) {
+    async function openGallery(key) {
         const data = galleryMap[key];
         if (!data || !galleryModal) return;
         currentGalleryKey = key;
@@ -780,17 +774,14 @@ document.addEventListener('DOMContentLoaded', function() {
         galleryTitle.textContent = data.title;
         galleryCounter.textContent = '...';
         galleryImage.src = '';
-        renderGalleryThumbnails(key);
-        showGalleryImage(currentIndex);
         galleryModal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
-        ensureGalleryResolved(key).then(list => {
-            if (currentGalleryKey === key && list.length) {
-                // Refresh the view with the resolved assets
-                renderGalleryThumbnails(key);
-                showGalleryImage(currentIndex);
-            }
-        });
+        try {
+            await ensureGalleryData(key);
+        } catch (e) { /* silent */ }
+        if (currentGalleryKey !== key) return;
+        renderGalleryThumbnails(key);
+        showGalleryImage(currentIndex);
     }
 
     function closeGallery() {
@@ -837,9 +828,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 const data = galleryMap[key];
                 if (!data) continue;
                 try {
-                    const list = await ensureGalleryResolved(key, 24);
-                    if (list.length) data.images = list;
-                    const thumb = list.find(u => !/\.pdf($|\?)/i.test(u));
+                    const list = await ensureGalleryData(key);
+                    const usableList = (list && list.length) ? list : getGalleryList(data);
+                    if (usableList.length) data.images = usableList;
+                    const thumb = usableList.find(u => !/\.pdf($|\?)/i.test(u));
                     const imgEl = item.querySelector('img');
                     if (thumb && imgEl) imgEl.src = thumb;
                 } catch (e) { /* noop */ }
