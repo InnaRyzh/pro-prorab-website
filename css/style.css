@@ -1590,15 +1590,15 @@ html {
 
 .about-image-large {
     height: 460px;
-    width: 100%;
+    width: min(100%, 360px);
     max-width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    justify-self: center;
     margin-top: 8px; /* слегка смещаем вниз, чтобы не "резало" сверху */
     border-radius: 16px;
-    background: #f2eee9;
 }
 
 .about-image-large img {
