@@ -1572,9 +1572,9 @@ html {
 
 .about-intro {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
+    grid-template-columns: minmax(0, 1fr) 430px;
+    gap: 4.5rem;
+    align-items: start;
 }
 
 .about-text-large h2 {
@@ -1589,8 +1589,8 @@ html {
 }
 
 .about-image-large {
-    height: 460px;
-    width: min(100%, 360px);
+    height: 560px;
+    width: min(100%, 430px);
     max-width: 100%;
     display: flex;
     align-items: center;
@@ -1602,12 +1602,24 @@ html {
 }
 
 .about-image-large img {
-    width: auto;
-    max-width: 100%;
+    width: 100%;
     height: 100%;
-    object-fit: contain;
-    object-position: center;
+    object-fit: cover;
+    object-position: center top;
     border-radius: inherit;
+}
+
+@media (max-width: 768px) {
+    .about-intro {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .about-image-large {
+        width: min(100%, 360px);
+        height: 480px;
+        justify-self: center;
+    }
 }
 
 /* Values Section */
