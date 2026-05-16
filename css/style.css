@@ -1304,7 +1304,7 @@ section {
   .about-intro { gap: 0.75rem; }
   .about-text-large p { margin-bottom: 0.75rem; }
   .about-image-large { height: 240px; max-width: 100%; border-radius: 16px; }
-  .about-image-large img { object-fit: cover; object-position: center; border-radius: inherit; }
+  .about-image-large img { object-fit: contain; object-position: center; border-radius: inherit; }
 }
 
 /* Very small devices */
@@ -1598,12 +1598,14 @@ html {
     overflow: hidden;
     margin-top: 8px; /* слегка смещаем вниз, чтобы не "резало" сверху */
     border-radius: 16px;
+    background: #f2eee9;
 }
 
 .about-image-large img {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
     border-radius: inherit;
 }
