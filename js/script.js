@@ -633,6 +633,14 @@ document.addEventListener('DOMContentLoaded', function() {
             fallback: [
                 'images/portfolio/dr-voice/1.jpg'
             ]
+        },
+        respublika: {
+            title: 'ЖК Республіка',
+            baseDir: 'images/portfolio/respublika',
+            images: [],
+            fallback: [
+                'images/portfolio/respublika/1.jpg'
+            ]
         }
     };
 
