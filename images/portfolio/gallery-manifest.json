@@ -2,7 +2,6 @@
   "great": [
     "images/portfolio/great/1.jpg",
     "images/portfolio/great/2.jpg",
-    "images/portfolio/great/3.jpg",
     "images/portfolio/great/4.jpg",
     "images/portfolio/great/5.jpg",
     "images/portfolio/great/6.jpg",
@@ -25,7 +24,6 @@
   ],
   "lakewood": [
     "images/portfolio/lakewood/12.jpg",
-    "images/portfolio/lakewood/1.jpg",
     "images/portfolio/lakewood/2.jpg",
     "images/portfolio/lakewood/3.jpg",
     "images/portfolio/lakewood/4.jpg",
@@ -53,15 +51,49 @@
     "images/portfolio/lakewood/27.jpg"
   ],
   "sofiaResidence": [
-    "images/portfolio/sofia-residence/1.jpg"
+    "images/portfolio/sofia-residence/1.jpg",
+    "images/portfolio/sofia-residence/2.jpg",
+    "images/portfolio/sofia-residence/3.jpg",
+    "images/portfolio/sofia-residence/4.jpg",
+    "images/portfolio/sofia-residence/5.jpg",
+    "images/portfolio/sofia-residence/6.jpg",
+    "images/portfolio/sofia-residence/7.jpg",
+    "images/portfolio/sofia-residence/8.jpg"
   ],
   "drVoice": [
-    "images/portfolio/dr-voice/1.jpg"
+    "images/portfolio/dr-voice/1.jpg",
+    "images/portfolio/dr-voice/2.jpg",
+    "images/portfolio/dr-voice/3.jpg",
+    "images/portfolio/dr-voice/4.jpg",
+    "images/portfolio/dr-voice/5.jpg",
+    "images/portfolio/dr-voice/6.jpg",
+    "images/portfolio/dr-voice/7.jpg",
+    "images/portfolio/dr-voice/8.jpg",
+    "images/portfolio/dr-voice/9.jpg",
+    "images/portfolio/dr-voice/10.jpg",
+    "images/portfolio/dr-voice/11.jpg"
   ],
   "respublika": [
-    "images/portfolio/respublika/1.jpg"
+    "images/portfolio/respublika/1.jpg",
+    "images/portfolio/respublika/2.jpg",
+    "images/portfolio/respublika/3.jpg",
+    "images/portfolio/respublika/4.jpg",
+    "images/portfolio/respublika/5.jpg",
+    "images/portfolio/respublika/6.jpg",
+    "images/portfolio/respublika/7.jpg"
   ],
   "theMoon": [
-    "images/portfolio/the-moon/1.jpg"
+    "images/portfolio/the-moon/1.jpg",
+    "images/portfolio/the-moon/2.jpg",
+    "images/portfolio/the-moon/3.jpg",
+    "images/portfolio/the-moon/4.jpg",
+    "images/portfolio/the-moon/5.jpg",
+    "images/portfolio/the-moon/6.jpg",
+    "images/portfolio/the-moon/7.jpg",
+    "images/portfolio/the-moon/8.jpg",
+    "images/portfolio/the-moon/9.jpg",
+    "images/portfolio/the-moon/10.jpg",
+    "images/portfolio/the-moon/11.jpg",
+    "images/portfolio/the-moon/12.jpg"
   ]
 }
