@@ -692,8 +692,8 @@ section {
 /* Portfolio Section */
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
     margin-bottom: 2rem;
 }
 
@@ -717,7 +717,7 @@ section {
     background-color: var(--wix-surface);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border-radius: 20px;
+    border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--wix-shadow);
     border: 1px solid var(--wix-border);
@@ -725,13 +725,13 @@ section {
 }
 
 .portfolio-item:hover {
-    transform: translateY(-10px) scale(1.02);
+    transform: translateY(-4px);
     box-shadow: var(--wix-shadow-lg);
     background-color: var(--wix-surface);
 }
 
 .portfolio-image {
-    height: 200px;
+    height: 150px;
     background-color: var(--wix-section-bg);
     display: flex;
     align-items: center;
@@ -740,12 +740,13 @@ section {
 }
 
 .portfolio-info {
-    padding: 1.5rem;
+    padding: 1rem;
 }
 
 .portfolio-title {
     color: var(--wix-text-primary);
-    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+    margin-bottom: 0.35rem;
 }
 
 .portfolio-location {
@@ -1942,8 +1943,9 @@ html {
 
 .portfolio-description {
     color: #666;
-    line-height: 1.6;
-    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    margin-bottom: 0;
 }
 
 .portfolio-link {
