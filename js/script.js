@@ -641,6 +641,14 @@ document.addEventListener('DOMContentLoaded', function() {
             fallback: [
                 'images/portfolio/respublika/1.jpg'
             ]
+        },
+        theMoon: {
+            title: '«The Moon»',
+            baseDir: 'images/portfolio/the-moon',
+            images: [],
+            fallback: [
+                'images/portfolio/the-moon/1.jpg'
+            ]
         }
     };
 
