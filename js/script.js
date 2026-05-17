@@ -599,7 +599,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const galleryNext = galleryModal ? galleryModal.querySelector('.gallery-next') : null;
     const galleryMap = {
         lakewood: {
-            title: 'Lakewood',
+            title: 'Грейт',
             baseDir: 'images/portfolio/lakewood',
             images: [],
             fallback: [
@@ -609,7 +609,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ]
         },
         great: {
-            title: 'Грейт',
+            title: 'Lakewood',
             baseDir: 'images/portfolio/great',
             images: [],
             fallback: [
