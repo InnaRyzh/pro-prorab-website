@@ -844,6 +844,9 @@ section {
 .package-list { list-style: disc; color: var(--wix-text-primary); margin: 0; padding-left: 1.2rem; display: grid; gap: 4px; }
 .package-list li { line-height: 1.45; }
 .package-list li::marker { color: var(--brand); }
+.package-feature-list { list-style: none; padding-left: 0; }
+.package-feature-list li { position: relative; padding-left: 1rem; }
+.package-feature-list li::before { content: "-"; position: absolute; left: 0; color: var(--brand); }
 .package-list-title { font-weight: 600; color: var(--wix-text-secondary); text-transform: uppercase; letter-spacing: 0.03em; }
 .package-note { font-size: 0.85rem; line-height: 1.4; }
 .package-price { font-weight: 600; color: var(--wix-text-primary); }

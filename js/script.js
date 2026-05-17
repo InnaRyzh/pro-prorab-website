@@ -267,16 +267,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     features: [
                         'Зустріч на об’єкті для узгодження задачі',
                         'Обмірний план',
-                        'Чат для спілкування активний на весь час проєктування',
                         'Перелік креслень',
-                        'Планувальні рішення (3–4 варіанти)',
                         'План демонтажу',
                         'Перепланування (монтажний план)',
                         'Схеми до монтажу',
                         'Схема розміщення кондиціонерів',
                         'Розводка комунікацій',
-                        'План електрики (розетки, вимикачі, освітлення)',
-                        'Візуалізація приміщень'
+                        'План електрики (розетки, вимикачі)',
+                        'Візуалізація приміщень',
+                        'Чат для спілкування активний на весь час проєктування'
                     ],
                     noteHtml: '*Електротехнічний план фактичної реалізації можна замовити окремо.<br>(включає обмірний план + планувальні рішення)<br>Вартість 15 $/м² (до 100 м²).',
                     priceHtml: '<strong>Ціна:</strong> приміщення до 100 м² — $20/м²; приміщення до 200 м² — $15/м².'
@@ -420,7 +419,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     featBlock.appendChild(featTitle);
                 }
                 const featList = document.createElement('ul');
-                featList.className = 'package-list';
+                featList.className = 'package-list package-feature-list';
                 pkg.features.forEach(item => {
                     const li = document.createElement('li');
                     li.textContent = item;
