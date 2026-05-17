@@ -625,6 +625,14 @@ document.addEventListener('DOMContentLoaded', function() {
             fallback: [
                 'images/portfolio/sofia-residence/1.jpg'
             ]
+        },
+        drVoice: {
+            title: 'Клініка «Dr. Voice»',
+            baseDir: 'images/portfolio/dr-voice',
+            images: [],
+            fallback: [
+                'images/portfolio/dr-voice/1.jpg'
+            ]
         }
     };
 
