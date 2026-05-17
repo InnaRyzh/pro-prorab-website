@@ -277,11 +277,16 @@ document.addEventListener('DOMContentLoaded', function() {
                         'Візуалізація приміщень',
                         'Чат для спілкування активний на весь час проєктування'
                     ],
-                    priceHtml: '<strong>Ціна:</strong> приміщення до 100 м² — $20/м²; приміщення до 200 м² — $15/м².'
+                    priceHtml: '<strong>Ціна:</strong> приміщення до 50 м² — $30/м²; приміщення від 50 до 70 м² — $25/м²; приміщення від 70 до 100 м² — $22/м².'
                 },
                 {
                     key: 'optimal',
                     name: 'Оптимальний',
+                    suitsTitle: 'Підходить для тих, хто:',
+                    suits: [
+                        'хоче отримувати консультацію стосовно закупівель',
+                        'потребує додаткових контактів підрядників'
+                    ],
                     featuresTitle: 'Що включає:',
                     features: [
                         'Усе з пакета «Легкий старт»',
@@ -289,9 +294,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     ],
                     extrasTitle: 'Додатково отримуєте:',
                     extras: [
-                        'Спілкування в чаті протягом реалізації',
-                        'Дизайнерські знижки до 10%',
-                        'Спілкування з майстрами'
+                        'Спілкування в чаті <strong>протягом реалізації ПРОЄКТУ</strong>',
+                        'Дизайнерські знижки до 10%'
                     ],
                     noteHtml: 'Виїзд на обʼєкт для консультації — $50.',
                     priceHtml: '<strong>Ціна:</strong> приміщення до 100 м² — $25/м²; приміщення до 200 м² — $20/м²; понад 200 м² — $15/м².'
@@ -411,7 +415,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 suitsList.className = 'package-list';
                 pkg.suits.forEach(item => {
                     const li = document.createElement('li');
-                    li.textContent = item;
+                    li.innerHTML = item;
                     suitsList.appendChild(li);
                 });
                 suitsBlock.appendChild(suitsList);
@@ -430,7 +434,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 featList.className = 'package-list package-feature-list';
                 pkg.features.forEach(item => {
                     const li = document.createElement('li');
-                    li.textContent = item;
+                    li.innerHTML = item;
                     featList.appendChild(li);
                 });
                 featBlock.appendChild(featList);
@@ -449,7 +453,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 extrasList.className = 'package-list';
                 pkg.extras.forEach(item => {
                     const li = document.createElement('li');
-                    li.textContent = item;
+                    li.innerHTML = item;
                     extrasList.appendChild(li);
                 });
                 extrasBlock.appendChild(extrasList);
