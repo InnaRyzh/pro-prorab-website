@@ -617,6 +617,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1600&q=60',
                 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=60'
             ]
+        },
+        sofiaResidence: {
+            title: 'ЖК Софія Резиденс',
+            baseDir: 'images/portfolio/sofia-residence',
+            images: [],
+            fallback: [
+                'images/portfolio/sofia-residence/1.jpg'
+            ]
         }
     };
 
