@@ -803,7 +803,7 @@ section {
 .modal-title { margin: 0; }
 .modal-price {
     margin-top: 8px;
-    color: var(--brand-brown);
+    color: #99CC99;
     font-weight: 700;
 }
 .modal-content {
