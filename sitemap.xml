@@ -1,49 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/0.9">
-
   <url>
     <loc>https://pro-prorab.com.ua/</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="uk-UA" href="https://pro-prorab.com.ua/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pro-prorab.com.ua/"/>
-
     <image:image>
       <image:loc>https://pro-prorab.com.ua/images/hero/hero-bg.jpg</image:loc>
-      <image:title>Pro Prorab — ремонт і дизайн інтер'єру в Києві</image:title>
-      <image:caption>Будівельно-дизайнерська студія Pro Prorab у Києві та області</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://pro-prorab.com.ua/images/about/about-photo.png</image:loc>
-      <image:title>Команда студії Pro Prorab</image:title>
     </image:image>
     <image:image>
       <image:loc>https://pro-prorab.com.ua/images/portfolio/lakewood/12.jpg</image:loc>
-      <image:title>Дизайн інтер'єру у ЖК Грейт, Київ</image:title>
     </image:image>
     <image:image>
       <image:loc>https://pro-prorab.com.ua/images/portfolio/great/1.jpg</image:loc>
-      <image:title>Інтер'єр заміського будинку Lakewood під Києвом</image:title>
     </image:image>
     <image:image>
       <image:loc>https://pro-prorab.com.ua/images/portfolio/sofia-residence/4.jpg</image:loc>
-      <image:title>Дизайн квартири в ЖК Софія Резиденс, Київ</image:title>
     </image:image>
     <image:image>
       <image:loc>https://pro-prorab.com.ua/images/portfolio/dr-voice/5.jpg</image:loc>
-      <image:title>Інтер'єр клініки Dr. Voice у Києві</image:title>
     </image:image>
     <image:image>
       <image:loc>https://pro-prorab.com.ua/images/portfolio/respublika/5.jpg</image:loc>
-      <image:title>Інтер'єр квартири у ЖК Республіка, Київ</image:title>
     </image:image>
     <image:image>
       <image:loc>https://pro-prorab.com.ua/images/portfolio/the-moon/11.jpg</image:loc>
-      <image:title>Дизайн заміського будинку The Moon — Київська область</image:title>
     </image:image>
   </url>
-
 </urlset>
