@@ -1,34 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://pro-prorab.com.ua/</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://pro-prorab.com.ua/images/hero/hero-bg.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://pro-prorab.com.ua/images/about/about-photo.png</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://pro-prorab.com.ua/images/portfolio/lakewood/12.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://pro-prorab.com.ua/images/portfolio/great/1.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://pro-prorab.com.ua/images/portfolio/sofia-residence/4.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://pro-prorab.com.ua/images/portfolio/dr-voice/5.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://pro-prorab.com.ua/images/portfolio/respublika/5.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://pro-prorab.com.ua/images/portfolio/the-moon/11.jpg</image:loc>
-    </image:image>
   </url>
 </urlset>
