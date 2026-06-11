@@ -2715,13 +2715,24 @@ a.logo:hover { text-decoration: none; color: inherit; }
     .faq-answer { padding: 0 1.1rem 1.1rem; font-size: 0.95rem; }
 }
 
-/* === Redesign: compact hero on desktop so the icon strip fits the first screen === */
+/* === First screen exact fit: header + hero + wave + icon strip = 100vh ===
+   The header is fixed and overlays the hero top, so we add its height as
+   padding so the text centers within the VISIBLE photo area. The hero height
+   leaves exactly the facts-strip height (~155px) at the bottom. */
 @media (min-width: 992px) {
-    .hero { height: 72vh; min-height: 500px; }
+    .hero {
+        height: calc(100vh - 155px);
+        min-height: 560px;
+        padding-top: var(--header-h, 88px);
+    }
 }
-/* Tablets: same idea, slightly taller */
+/* Tablets: labels may wrap to two lines — reserve a bit more */
 @media (min-width: 769px) and (max-width: 991px) {
-    .hero { height: 76vh; min-height: 480px; }
+    .hero {
+        height: calc(100vh - 175px);
+        min-height: 500px;
+        padding-top: var(--header-h, 80px);
+    }
 }
 
 /* Secondary hero button: outline on dark photo */
