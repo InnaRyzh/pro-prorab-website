@@ -804,7 +804,7 @@ section {
 .modal-title { margin: 0; }
 .modal-price {
     margin-top: 8px;
-    color: #99CC99;
+    color: #1F5440;
     font-weight: 700;
 }
 .modal-content {
@@ -825,33 +825,42 @@ section {
 /* Service packages */
 .service-packages { margin-top: 24px; border-top: 1px solid var(--wix-border); padding-top: 20px; }
 .package-tabs { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
-.package-tab { padding: 12px 22px; border-radius: 999px; border: 2px solid rgba(216, 195, 165, 0.5); background: rgba(255,255,255,0.92); color: var(--wix-text-primary); font-weight: 600; font-size: 1.05rem; letter-spacing: 0.01em; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, color 0.2s ease; position: relative; overflow: hidden; }
-.package-tab::after { content: ''; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(135deg, rgba(216,195,165,0), rgba(216,195,165,0.25)); opacity: 0; transition: opacity 0.2s ease; }
-.package-tab:hover { border-color: var(--brand); color: var(--wix-text-primary); box-shadow: 0 10px 24px rgba(216, 195, 165, 0.35); transform: translateY(-2px); }
-.package-tab:hover::after { opacity: 1; }
-.package-tab.active { background: var(--brand); border-color: var(--brand); color: #1a1a1a; box-shadow: 0 14px 32px rgba(216, 195, 165, 0.45); }
-.package-tab.active::after { opacity: 1; background: linear-gradient(135deg, rgba(255,255,255,0.4), rgba(216,195,165,0.5)); }
+.package-tab { padding: 10px 22px; border-radius: 16px; border: 2px solid rgba(31, 84, 64, 0.25); background: rgba(255,255,255,0.92); color: var(--wix-text-primary); font-weight: 600; font-size: 1.02rem; letter-spacing: 0.01em; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease; position: relative; text-align: center; }
+.package-tab:hover { border-color: #1F5440; color: var(--wix-text-primary); box-shadow: 0 8px 20px rgba(31, 84, 64, 0.18); transform: translateY(-2px); }
+.package-tab.active { background: #1F5440; border-color: #1F5440; color: #fff; box-shadow: 0 10px 24px rgba(31, 84, 64, 0.28); }
+.package-tab-name { display: block; }
+.package-tab-hint { display: block; margin-top: 2px; font-size: 0.78rem; font-weight: 500; color: var(--wix-text-muted); }
+.package-tab.active .package-tab-hint { color: rgba(255, 255, 255, 0.85); }
+.package-tab-badge { position: absolute; top: -10px; right: 12px; background: #ECD2A3; color: #1F5440; font-size: 0.68rem; font-weight: 700; padding: 2px 9px; border-radius: 999px; letter-spacing: 0.02em; white-space: nowrap; }
 .package-body { background: var(--wix-accent-light); border: 1px solid var(--wix-border); border-radius: 16px; padding: 20px; display: grid; gap: 14px; position: relative; }
-.package-body::before { content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; box-shadow: inset 0 0 0 1px rgba(216, 195, 165, 0.15); }
+.package-body::before { content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; box-shadow: inset 0 0 0 1px rgba(31, 84, 64, 0.08); }
 .package-meta { display: flex; flex-wrap: wrap; gap: 12px; font-size: 0.9rem; color: var(--wix-text-muted); }
 .package-term { font-weight: 600; }
 .package-alias { font-style: italic; }
 .package-title { font-size: 1.3rem; color: var(--wix-text-primary); }
 .package-section { background: var(--wix-surface); border: 1px solid var(--wix-border); border-radius: 12px; padding: 14px 16px; box-shadow: var(--wix-shadow); }
-.package-section.suits { background: rgba(216, 195, 165, 0.12); border-color: var(--brand); }
-.package-section.upgrades { background: linear-gradient(135deg, rgba(216, 195, 165, 0.25), rgba(216, 195, 165, 0.08)); border-color: rgba(216, 195, 165, 0.6); box-shadow: 0 8px 24px rgba(216, 195, 165, 0.18); }
+.package-section.suits { background: rgba(31, 84, 64, 0.05); border-color: rgba(31, 84, 64, 0.3); }
+.package-section.upgrades { background: linear-gradient(135deg, rgba(31, 84, 64, 0.12), rgba(31, 84, 64, 0.04)); border-color: rgba(31, 84, 64, 0.35); box-shadow: 0 8px 24px rgba(31, 84, 64, 0.12); }
 .package-section.upgrades h5 { color: var(--wix-text-primary); }
 .package-section h5 { font-size: 0.95rem; margin-bottom: 6px; color: var(--wix-text-secondary); text-transform: uppercase; letter-spacing: 0.02em; }
 .package-list { list-style: disc; color: var(--wix-text-primary); margin: 0; padding-left: 1.2rem; display: grid; gap: 4px; }
 .package-list li { line-height: 1.45; }
-.package-list li::marker { color: var(--brand); }
+.package-list li::marker { color: #1F5440; }
 .package-feature-list { list-style: none; padding-left: 0; }
 .package-feature-list li { position: relative; padding-left: 1rem; }
 .package-feature-list li::before { content: "-"; position: absolute; left: 0; color: var(--brand); }
 .package-list-title { font-weight: 600; color: var(--wix-text-secondary); text-transform: uppercase; letter-spacing: 0.03em; }
 .package-note { font-size: 0.85rem; line-height: 1.4; }
 .package-price { font-weight: 600; color: var(--wix-text-primary); }
-.package-price strong { color: var(--brand); font-weight: 700; }
+.package-price strong { color: #1F5440; font-weight: 700; }
+
+/* Price table inside package body */
+.package-price-table { background: var(--wix-surface); border: 1px solid rgba(31, 84, 64, 0.3); border-radius: 12px; padding: 14px 16px; }
+.package-price-table h5 { font-size: 0.95rem; margin-bottom: 8px; color: var(--wix-text-secondary); text-transform: uppercase; letter-spacing: 0.02em; }
+.package-price-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 7px 0; border-bottom: 1px dashed var(--wix-border); }
+.package-price-row:last-child { border-bottom: none; padding-bottom: 0; }
+.package-price-row span { color: var(--wix-text-secondary); }
+.package-price-row strong { color: #1F5440; font-weight: 700; font-size: 1.05rem; white-space: nowrap; }
 .package-description { line-height: 1.6; }
 .package-body-animate { animation: packageFade 0.35s ease; }
 
@@ -861,8 +870,8 @@ section {
 }
 
 @media (max-width: 768px) {
-  .package-tabs { flex-direction: column; gap: 10px; }
-  .package-tab { width: 100%; text-align: center; font-size: 1.1rem; padding: 14px 20px; }
+  .package-tabs { flex-direction: column; gap: 14px; }
+  .package-tab { width: 100%; text-align: center; font-size: 1.05rem; padding: 12px 20px; }
   .package-body { padding: 16px; }
 }
 
