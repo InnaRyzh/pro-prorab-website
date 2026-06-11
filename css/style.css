@@ -3137,3 +3137,25 @@ a.logo:hover { text-decoration: none; color: inherit; }
     }
     .process-step:hover { transform: none; }
 }
+
+/* === Mobile hero: shorter photo so the wave + icon strip are visible on the first screen (mockup) === */
+@media (max-width: 768px) {
+    .hero {
+        height: 74dvh;
+        min-height: 520px;
+    }
+    .hero-wave svg { height: 44px; }
+    .hero .hero-subtitle { font-size: 1.45rem; }
+    .hero .hero-tagline { margin-bottom: 1.4rem; }
+    .hero-buttons { gap: 0.7rem; }
+    .hero .btn { padding: 0.85rem 1.5rem; font-size: 0.98rem; }
+    .facts-strip { padding: 1.8rem 0 1.6rem; }
+}
+@media (max-width: 480px) {
+    .hero {
+        height: 72dvh;
+        min-height: 470px;
+    }
+    .hero-title { font-size: 2.2rem; }
+    .hero-divider { margin: 0.9rem 0 1rem; }
+}
