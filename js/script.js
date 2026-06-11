@@ -278,6 +278,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     key: 'light',
                     name: 'Легкий старт',
+                    hint: 'від $22/м²',
                     suitsTitle: 'Підходить для тих, хто:',
                     suits: [
                         'має обмежений бюджет',
@@ -297,11 +298,17 @@ document.addEventListener('DOMContentLoaded', function() {
                         'Візуалізація приміщень',
                         'Чат для спілкування активний на весь час проєктування'
                     ],
-                    priceHtml: '<strong>Ціна:</strong> приміщення до 50 м² — $30/м²; приміщення від 50 до 70 м² — $25/м²; приміщення від 70 до 100 м² — $22/м².'
+                    priceTable: [
+                        ['Приміщення до 50 м²', '$30/м²'],
+                        ['Від 50 до 70 м²', '$25/м²'],
+                        ['Від 70 до 100 м²', '$22/м²']
+                    ]
                 },
                 {
                     key: 'optimal',
                     name: 'Оптимальний',
+                    hint: 'від $27/м²',
+                    badge: 'Найпопулярніший',
                     suitsTitle: 'Підходить для тих, хто:',
                     suits: [
                         'хоче отримувати консультацію стосовно закупівель',
@@ -318,16 +325,22 @@ document.addEventListener('DOMContentLoaded', function() {
                         'Дизайнерські знижки до 10%'
                     ],
                     noteHtml: 'Виїзд на обʼєкт для консультації — $50.',
-                    priceHtml: '<strong>Ціна:</strong> приміщення до 50 м² — $35/м²; приміщення від 50 до 70 м² — $30/м²; приміщення від 70 до 100 м² — $27/м².'
+                    priceTable: [
+                        ['Приміщення до 50 м²', '$35/м²'],
+                        ['Від 50 до 70 м²', '$30/м²'],
+                        ['Від 70 до 100 м²', '$27/м²']
+                    ]
                 },
                 {
                     key: 'premium',
                     name: 'Преміум',
+                    hint: 'індивідуально',
                     description: 'Преміальний пакет містить розширений супровід та додаткові послуги. Ми уточнимо всі деталі під ваш проєкт за індивідуальним запитом.'
                 },
                 {
                     key: 'individual',
                     name: 'Індивідуально',
+                    hint: 'окремі послуги',
                     featuresTitle: 'Окремі послуги:',
                     features: [
                         'Електротехнічний план фактичної реалізації можна замовити окремо. Включає обмірний план + планувальні рішення. Вартість 15 $/м² (до 100 м²).',
@@ -511,7 +524,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 body.appendChild(note);
             }
 
-            if (pkg.priceHtml || pkg.price) {
+            if (pkg.priceTable && pkg.priceTable.length) {
+                const priceBlock = document.createElement('div');
+                priceBlock.className = 'package-price-table';
+                const heading = document.createElement('h5');
+                heading.textContent = 'Вартість за площею';
+                priceBlock.appendChild(heading);
+                pkg.priceTable.forEach(([label, value]) => {
+                    const row = document.createElement('div');
+                    row.className = 'package-price-row';
+                    const labelEl = document.createElement('span');
+                    labelEl.textContent = label;
+                    const valueEl = document.createElement('strong');
+                    valueEl.textContent = value;
+                    row.appendChild(labelEl);
+                    row.appendChild(valueEl);
+                    priceBlock.appendChild(row);
+                });
+                body.appendChild(priceBlock);
+            } else if (pkg.priceHtml || pkg.price) {
                 const price = document.createElement('p');
                 price.className = 'package-price';
                 if (pkg.priceHtml) {
@@ -542,7 +573,22 @@ document.addEventListener('DOMContentLoaded', function() {
             const btn = document.createElement('button');
             btn.type = 'button';
             btn.className = 'package-tab';
-            btn.textContent = pkg.name;
+            const nameEl = document.createElement('span');
+            nameEl.className = 'package-tab-name';
+            nameEl.textContent = pkg.name;
+            btn.appendChild(nameEl);
+            if (pkg.hint) {
+                const hintEl = document.createElement('span');
+                hintEl.className = 'package-tab-hint';
+                hintEl.textContent = pkg.hint;
+                btn.appendChild(hintEl);
+            }
+            if (pkg.badge) {
+                const badgeEl = document.createElement('span');
+                badgeEl.className = 'package-tab-badge';
+                badgeEl.textContent = pkg.badge;
+                btn.appendChild(badgeEl);
+            }
             btn.setAttribute('data-package', pkg.key || `pkg-${index}`);
             btn.setAttribute('aria-pressed', index === 0 ? 'true' : 'false');
             btn.addEventListener('click', () => activate(index));
