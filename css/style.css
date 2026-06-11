@@ -844,6 +844,8 @@ section {
 .package-section.upgrades h5 { color: var(--wix-text-primary); }
 .package-section h5 { font-size: 0.95rem; margin-bottom: 6px; color: var(--wix-text-secondary); text-transform: uppercase; letter-spacing: 0.02em; }
 .package-list { list-style: disc; color: var(--wix-text-primary); margin: 0; padding-left: 1.2rem; display: grid; gap: 4px; }
+.modal-content .package-list { margin: 0 0 0 0; padding-left: 1.2rem; }
+.modal-content .package-body > p { margin: 0; }
 .package-list li { line-height: 1.45; }
 .package-list li::marker { color: #1F5440; }
 .package-feature-list { list-style: none; padding-left: 0; }
