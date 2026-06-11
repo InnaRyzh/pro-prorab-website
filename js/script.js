@@ -193,8 +193,28 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe elements for animation
-    const animateElements = document.querySelectorAll('.service-card, .portfolio-item, .about-content, .section-header');
+    const animateElements = document.querySelectorAll('.service-card, .portfolio-item, .about-content, .section-header, .fact-item, .process-step, .advantage-item, .faq-item');
     animateElements.forEach(el => observer.observe(el));
+
+    // Portfolio category filters
+    const portfolioFilterBtns = document.querySelectorAll('.portfolio-filter-btn');
+    const portfolioFilterItems = document.querySelectorAll('.portfolio-item[data-category]');
+    portfolioFilterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            portfolioFilterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            const filter = this.dataset.filter;
+            portfolioFilterItems.forEach(item => {
+                const show = filter === 'all' || item.dataset.category === filter;
+                item.classList.toggle('filtered-out', !show);
+                if (show) {
+                    item.classList.remove('fade-in-up');
+                    void item.offsetWidth; // restart animation
+                    item.classList.add('fade-in-up');
+                }
+            });
+        });
+    });
 
     // Portfolio hover effects
     const portfolioItems = document.querySelectorAll('.portfolio-item');
