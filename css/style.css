@@ -2934,3 +2934,106 @@ a.logo:hover { text-decoration: none; color: inherit; }
     flex-wrap: wrap;
 }
 .contact-messengers .contact-link i { margin-right: 0.35rem; }
+
+/* === Mobile services: compact image tiles instead of tall cards === */
+@media (max-width: 768px) {
+    .services-grid { gap: 1rem; }
+    .service-card {
+        position: relative;
+        overflow: hidden;
+        min-height: 200px;
+        padding: 1.25rem;
+        justify-content: flex-end;
+        align-items: flex-start;
+        text-align: left;
+        border: none;
+    }
+    .service-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        z-index: 0;
+    }
+    .service-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 15%, rgba(31, 84, 64, 0.88) 100%);
+        z-index: 1;
+    }
+    .services-grid .service-card:nth-child(1)::before { background-image: url('../images/portfolio/sofia-residence/4.jpg'); }
+    .services-grid .service-card:nth-child(2)::before { background-image: url('../images/portfolio/lakewood/12.jpg'); }
+    .services-grid .service-card:nth-child(3)::before { background-image: url('../images/portfolio/respublika/5.jpg'); }
+    .service-card .service-icon,
+    .service-card .service-description,
+    .service-card .service-includes { display: none; }
+    .service-card .service-title,
+    .service-card .service-price,
+    .service-card .service-actions {
+        position: relative;
+        z-index: 2;
+        margin: 0;
+    }
+    .service-card .service-title {
+        color: #fff;
+        font-size: 1.22rem;
+        line-height: 1.25;
+        margin-bottom: 0.3rem;
+        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
+    }
+    .service-card .service-price {
+        color: #ECD2A3;
+        font-size: 0.9rem;
+        margin-bottom: 0.85rem;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+    }
+    .service-card .service-actions .btn-outline {
+        background: transparent;
+        border: 1.5px solid rgba(255, 255, 255, 0.9);
+        color: #fff;
+        padding: 0.5rem 1.15rem;
+        font-size: 0.9rem;
+        min-height: 40px;
+    }
+    .service-card:hover { transform: none; }
+}
+
+/* === Desktop process steps: perfectly aligned stepper === */
+@media (min-width: 993px) {
+    .process-steps {
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: stretch;
+    }
+    .process-step {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.75rem 1.1rem 1.6rem;
+    }
+    .process-step h3 {
+        min-height: 2.7em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        line-height: 1.3;
+        margin-bottom: 0.45rem;
+    }
+    .process-step p { text-align: center; }
+    /* connector line between number circles */
+    .process-step:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        top: calc(1.75rem + 21px);
+        right: -1.25rem;
+        width: 1.25rem;
+        height: 2px;
+        background: var(--wix-accent-dark);
+    }
+    .process-step:hover { transform: none; }
+}
