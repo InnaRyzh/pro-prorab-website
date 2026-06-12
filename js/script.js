@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe elements for animation
-    const animateElements = document.querySelectorAll('.service-card, .portfolio-item, .about-content, .section-header, .fact-item, .process-step, .advantage-item, .faq-item');
+    const animateElements = document.querySelectorAll('.service-card, .portfolio-item, .about-content, .section-header, .fact-item, .advantage-item, .faq-item');
     animateElements.forEach(el => observer.observe(el));
 
     // Portfolio category filters
