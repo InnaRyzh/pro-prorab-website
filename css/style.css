@@ -3079,3 +3079,97 @@ a.logo:hover { text-decoration: none; color: inherit; }
     .hero-title { font-size: 2.2rem; }
     .hero-divider { margin: 0.9rem 0 1rem; }
 }
+
+/* === Service subpages (SEO landing pages) === */
+.page-hero {
+    background: var(--wix-accent-bg);
+    padding: calc(var(--header-h, 88px) + 2.6rem) 0 2.8rem;
+    border-bottom: 1px solid var(--wix-border);
+}
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    font-size: 0.88rem;
+    color: var(--wix-text-muted);
+    margin-bottom: 1.3rem;
+}
+.breadcrumbs a { color: var(--brand-brown); text-decoration: none; }
+.breadcrumbs a:hover { color: var(--brand-brown-hover); text-decoration: underline; }
+.page-hero h1 {
+    font-size: 2.35rem;
+    line-height: 1.2;
+    color: var(--wix-text-primary);
+    margin-bottom: 0.9rem;
+    max-width: 800px;
+}
+.page-hero .lead {
+    font-size: 1.12rem;
+    color: var(--wix-text-secondary);
+    line-height: 1.7;
+    max-width: 740px;
+    margin-bottom: 1.7rem;
+}
+.page-hero .hero-buttons { justify-content: flex-start; }
+.page-hero .btn {
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.9rem 1.7rem;
+}
+.service-article { padding: 3.2rem 0 3.8rem; }
+.service-article .container { max-width: 920px; }
+.service-article h2 {
+    font-size: 1.65rem;
+    color: var(--wix-text-primary);
+    margin: 2.4rem 0 1rem;
+}
+.service-article h2:first-child { margin-top: 0; }
+.service-article p {
+    color: var(--wix-text-secondary);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+}
+.service-article .steps-list {
+    padding-left: 1.35rem;
+    color: var(--wix-text-secondary);
+    line-height: 1.85;
+    margin: 0 0 1rem;
+}
+.service-article .steps-list li { margin-bottom: 0.4rem; }
+.service-article .package-body { margin: 1.2rem 0; }
+.page-portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1.2rem 0 0.4rem;
+}
+.page-portfolio-grid a { display: block; border-radius: var(--wix-radius-lg); overflow: hidden; }
+.page-portfolio-grid img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+.page-portfolio-grid a:hover img { transform: scale(1.04); }
+.service-page-link {
+    display: inline-block;
+    margin-top: 0.65rem;
+    color: var(--brand-brown);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+}
+.service-page-link:hover { color: var(--brand-brown-hover); text-decoration: underline; }
+@media (max-width: 768px) {
+    .page-hero h1 { font-size: 1.7rem; }
+    .page-hero .lead { font-size: 1rem; }
+    .page-hero .hero-buttons { flex-direction: column; align-items: stretch; }
+    .page-hero .btn { width: 100%; }
+    .page-portfolio-grid { grid-template-columns: 1fr; }
+    .page-portfolio-grid img { height: 220px; }
+    .service-article h2 { font-size: 1.35rem; }
+}
