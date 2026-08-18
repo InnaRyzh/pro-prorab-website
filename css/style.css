@@ -5,48 +5,62 @@
     box-sizing: border-box;
 }
 
-/* CSS Variables for Custom Beige Color Scheme */
+/* ==========================================================================
+   Palette v2 — 4-color system (deep green · sand · warm off-white · graphite),
+   ported from the approved /new/ prototype. Everything below maps the legacy
+   variable names onto this system so the whole site re-skins consistently.
+   ========================================================================== */
 :root {
+    /* Core palette */
+    --green: #1F5440;
+    --green-deep: #163F30;
+    --sand: #ECD2A3;
+    --sand-soft: #F3E9D8;
+    --cream: #F7F4EE;
+    --ink: #1E1E1C;
+    --ink-soft: #5B5A55;
+    --ink-mute: #8B8983;
+
     /* Background Colors */
-    --wix-bg: #ffffff; /* Pure white background */
-    --wix-surface: #ffffff; /* White surface */
-    --wix-section-bg: #f8f9fa; /* Light gray section background */
-    --wix-accent-bg: #F5F4F0; /* Very light beige accent background */
+    --wix-bg: var(--cream);          /* page background: warm off-white, not pure white */
+    --wix-surface: #FFFFFF;          /* cards, modals, header surface */
+    --wix-section-bg: #FFFFFF;       /* alternate (white) sections */
+    --wix-accent-bg: var(--sand-soft); /* sand sections: facts strip, FAQ, page heroes */
 
     /* Text Colors */
-    --wix-text-primary: #1a1a1a; /* Very dark text */
-    --wix-text-secondary: #333333; /* Dark gray text */
-    --wix-text-muted: #666666; /* Medium gray text */
+    --wix-text-primary: var(--ink);
+    --wix-text-secondary: var(--ink-soft);
+    --wix-text-muted: var(--ink-mute);
 
-    /* Accent Colors - Beige Theme */
-    --wix-accent: #E8E6E1; /* Main beige accent */
-    --wix-accent-hover: #D4D1C9; /* Lighter beige for hover states */
-    --wix-accent-light: #F9F8F5; /* Very light beige */
-    --wix-accent-dark: #C4C1B9; /* Darker beige for borders */
-    --wix-success: #8FA88F; /* Soft green for success states */
-    --wix-warning: #D4B08A; /* Warm beige for warnings */
+    /* Accent Colors */
+    --wix-accent: var(--sand-soft);   /* soft sand fills (icon circles, hovers) */
+    --wix-accent-hover: var(--sand);
+    --wix-accent-light: var(--cream);
+    --wix-accent-dark: #DCCFBB;       /* sand-toned borders */
+    --wix-success: var(--green);      /* checkmarks */
+    --wix-warning: var(--sand);
 
     /* UI Elements */
-    --wix-border: #e8e6e1; /* Beige border */
-    --wix-border-light: #f0f0f0; /* Very light border */
-    --wix-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
-    --wix-shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.05);
-    --wix-shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.08);
-    --wix-radius: 8px; /* Border radius */
-    --wix-radius-lg: 12px; /* Large border radius */
+    --wix-border: rgba(30, 30, 28, 0.12);
+    --wix-border-light: rgba(30, 30, 28, 0.07);
+    --wix-shadow: 0 2px 4px rgba(30, 30, 28, 0.03);
+    --wix-shadow-lg: 0 4px 12px rgba(30, 30, 28, 0.06);
+    --wix-shadow-xl: 0 8px 24px rgba(30, 30, 28, 0.08);
+    --wix-radius: 8px;
+    --wix-radius-lg: 12px;
 
-    /* Brand Colors (Warm Beige theme) */
-    --brand: #D8C3A5; /* Warm beige */
-    --brand-hover: #C9AF8D; /* Darker beige on hover */
-    --brand-contrast: #2E2E2E; /* Dark text on beige */
+    /* Brand: primary actions are deep green with white text */
+    --brand: var(--green);
+    --brand-hover: var(--green-deep);
+    --brand-contrast: #FFFFFF;
 
-    /* Hero Text Colors (richer, not black) */
-    --hero-title-color: #245B4A; /* Deep green slate */
-    --hero-subtitle-color: #317D63; /* Softer green slate */
+    /* Hero / heading accents */
+    --hero-title-color: var(--green);
+    --hero-subtitle-color: var(--green);
 
-    /* Supporting brown tone for links */
-    --brand-brown: #6B5B4B;
-    --brand-brown-hover: #5A4C3E;
+    /* Links (legacy name kept; now green) */
+    --brand-brown: var(--green);
+    --brand-brown-hover: var(--green-deep);
 }
 
 body {
@@ -101,7 +115,7 @@ img {
     .header {
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
-        background-color: rgba(255, 255, 255, 0.95);
+        background-color: rgba(247, 244, 238, 0.96);
     }
 }
 
@@ -112,7 +126,7 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(247, 244, 238, 0.98);
     backdrop-filter: blur(20px);
     z-index: 999;
     padding: 2rem 1rem;
@@ -238,7 +252,7 @@ p {
 
 /* Header */
 .header {
-    background-color: var(--wix-surface);
+    background-color: rgba(247, 244, 238, 0.9);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     position: fixed;
@@ -408,7 +422,7 @@ p {
     left: 0;
     right: 0;
     height: 100dvh;
-    background-color: rgba(255, 255, 255, 0.98);
+    background-color: rgba(247, 244, 238, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     padding: calc(var(--header-h, 64px) + 12px) 1rem 2rem;
@@ -488,10 +502,8 @@ p {
 }
 
 .hero .btn-primary:hover {
-    background-image: linear-gradient(135deg, #D8C3A5 0%, #E6D5BC 100%);
-    background-size: 200% 200%;
-    background-position: 100% 50%;
-    border-color: #D1BB9E;
+    background: var(--brand-hover);
+    border-color: var(--brand-hover);
 }
 
 .hero-title {
@@ -613,7 +625,7 @@ section {
 
 /* Services Section */
 .services-preview {
-    background-color: #f8f9fa;
+    background-color: var(--wix-section-bg);
 }
 
 .services-grid {
@@ -904,7 +916,7 @@ section {
 
 /* Contact Form Section */
 .contact-form-section {
-    background-color: #f8f9fa;
+    background-color: var(--wix-section-bg);
 }
 
 .contact-form-content {
@@ -942,7 +954,7 @@ section {
 .form-group textarea {
     width: 100%;
     padding: 12px 15px;
-    border: 2px solid #e9ecef;
+    border: 2px solid var(--wix-border);
     border-radius: 5px;
     font-size: 16px;
     transition: border-color 0.3s ease;
@@ -951,7 +963,7 @@ section {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #A67C52;
+    border-color: var(--brand);
 }
 
 /* Footer */
@@ -1397,7 +1409,7 @@ html {
 }
 
 .scroll-top-btn:hover {
-    background-image: linear-gradient(135deg, var(--brand) 0%, #E6D5BC 100%);
+    background: var(--brand-hover);
 }
 
 .scroll-top-btn:focus-visible {
@@ -1561,7 +1573,7 @@ html {
 
 /* Page Header */
 .page-header {
-    background: #D2CFC6;
+    background: var(--wix-accent-bg);
     color: var(--wix-text-primary);
     padding: 120px 0 80px;
     text-align: center;
@@ -1625,7 +1637,7 @@ html {
 
 /* Values Section */
 .our-values {
-    background-color: #f8f9fa;
+    background-color: var(--wix-section-bg);
     padding: 80px 0;
 }
 
@@ -1696,7 +1708,7 @@ html {
 
 .member-photo {
     height: 250px;
-    background-color: #f8f9fa;
+    background-color: var(--wix-section-bg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1713,7 +1725,7 @@ html {
 }
 
 .member-position {
-    color: #99CC99;
+    color: var(--brand);
     font-weight: 600;
     margin-bottom: 1rem;
 }
@@ -1725,7 +1737,7 @@ html {
 
 /* Why Choose Us */
 .why-choose-us {
-    background-color: #f8f9fa;
+    background-color: var(--wix-section-bg);
     padding: 80px 0;
 }
 
@@ -1752,7 +1764,7 @@ html {
     position: absolute;
     top: -15px;
     left: 2rem;
-    background-color: #99CC99;
+    background-color: var(--brand);
     color: white;
     width: 40px;
     height: 40px;
@@ -1776,7 +1788,7 @@ html {
 
 /* CTA Section */
 .cta-section {
-    background: #D2CFC6;
+    background: var(--wix-accent-bg);
     color: var(--wix-text-primary);
     padding: 80px 0;
     text-align: center;
@@ -1808,7 +1820,7 @@ html {
 
 .cta-buttons .btn-outline:hover {
     background-color: white;
-    color: #A67C52;
+    color: var(--brand);
 }
 
 /* Services Page Styles */
@@ -1827,7 +1839,7 @@ html {
     gap: 3rem;
     align-items: center;
     padding: 3rem 0;
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 1px solid var(--wix-border);
 }
 
 .service-detailed:last-child {
@@ -1862,13 +1874,13 @@ html {
     content: '✓';
     position: absolute;
     left: 0;
-    color: #99CC99;
+    color: var(--brand);
     font-weight: bold;
 }
 
 .service-image {
     height: 300px;
-    background-color: #f8f9fa;
+    background-color: var(--wix-section-bg);
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -1888,8 +1900,8 @@ html {
 .filter-btn {
     padding: 10px 20px;
     background-color: transparent;
-    border: 2px solid #A67C52;
-    color: #A67C52;
+    border: 2px solid var(--brand);
+    color: var(--brand);
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -1898,7 +1910,7 @@ html {
 
 .filter-btn:hover,
 .filter-btn.active {
-    background-color: #A67C52;
+    background-color: var(--brand);
     color: white;
 }
 
@@ -1926,7 +1938,7 @@ html {
 
 .portfolio-detailed-image {
     height: 250px;
-    background-color: #f8f9fa;
+    background-color: var(--wix-section-bg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1960,7 +1972,7 @@ html {
 }
 
 .portfolio-link {
-    color: #99CC99;
+    color: var(--brand);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
@@ -2013,7 +2025,7 @@ html {
 }
 
 .contact-detailed-form {
-    background-color: #f8f9fa;
+    background-color: var(--wix-section-bg);
     padding: 80px 0;
 }
 
@@ -2111,7 +2123,7 @@ html {
 
 /* Service Pricing */
 .service-pricing {
-    background-color: #f8f9fa;
+    background-color: var(--wix-section-bg);
     padding: 1rem;
     border-radius: 5px;
     margin: 1.5rem 0;
@@ -2124,7 +2136,7 @@ html {
 
 /* How We Work Section */
 .how-we-work {
-    background-color: #f8f9fa;
+    background-color: var(--wix-section-bg);
     padding: 80px 0;
 }
 
@@ -2147,7 +2159,7 @@ html {
 .step-number {
     width: 60px;
     height: 60px;
-    background-color: #99CC99;
+    background-color: var(--brand);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -2195,7 +2207,7 @@ html {
 }
 
 .pricing-card.featured {
-    border-color: #A67C52;
+    border-color: var(--brand);
     transform: scale(1.05);
 }
 
@@ -2218,7 +2230,7 @@ html {
 .price {
     font-size: 2rem;
     font-weight: 700;
-    color: #99CC99;
+    color: var(--brand);
     margin-bottom: 1rem;
 }
 
@@ -2226,7 +2238,7 @@ html {
     position: absolute;
     top: -10px;
     right: -10px;
-    background-color: #A67C52;
+    background-color: var(--brand);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -2241,7 +2253,7 @@ html {
 
 .pricing-features li {
     padding: 0.75rem 0;
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 1px solid var(--wix-border);
     position: relative;
     padding-left: 2rem;
 }
@@ -2254,7 +2266,7 @@ html {
     content: '✓';
     position: absolute;
     left: 0;
-    color: #A67C52;
+    color: var(--brand);
     font-weight: bold;
 }
 
@@ -2290,7 +2302,7 @@ html {
 .contact-info-icon {
     width: 60px;
     height: 60px;
-    background-color: #A67C52;
+    background-color: var(--brand);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -2312,7 +2324,7 @@ html {
 
 .contact-link {
     display: inline-block;
-    color: #99CC99;
+    color: var(--brand);
     text-decoration: none;
     font-weight: 600;
     margin-top: 1rem;
@@ -2324,7 +2336,7 @@ html {
 }
 
 .contact-detailed-form {
-    background-color: #f8f9fa;
+    background-color: var(--wix-section-bg);
     padding: 80px 0;
 }
 
@@ -2374,7 +2386,7 @@ html {
 }
 
 .checkbox-label a {
-    color: #A67C52;
+    color: var(--brand);
     text-decoration: none;
 }
 
@@ -2396,7 +2408,7 @@ html {
 
 .map-placeholder {
     height: 400px;
-    background-color: #f8f9fa;
+    background-color: var(--wix-section-bg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2428,7 +2440,7 @@ html {
 
 /* FAQ Section */
 .faq-section {
-    background-color: #f8f9fa;
+    background-color: var(--wix-section-bg);
     padding: 80px 0;
 }
 
@@ -2464,7 +2476,7 @@ html {
 
 /* Statistics Section */
 .statistics-section {
-    background: #D2CFC6;
+    background: var(--wix-accent-bg);
     color: var(--wix-text-primary);
     padding: 80px 0;
 }
@@ -2955,8 +2967,8 @@ a.logo:hover { text-decoration: none; color: inherit; }
     height: 58px;
     margin: 0 auto 0.7rem;
     border-radius: 50%;
-    background: #EAD9BD;
-    color: var(--brand-brown);
+    background: var(--sand);
+    color: var(--green);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3172,4 +3184,40 @@ a.logo:hover { text-decoration: none; color: inherit; }
     .page-portfolio-grid { grid-template-columns: 1fr; }
     .page-portfolio-grid img { height: 220px; }
     .service-article h2 { font-size: 1.35rem; }
+}
+
+/* === Palette v2: dark graphite footer (from the /new/ prototype) === */
+.footer {
+    background-color: var(--ink);
+    color: rgba(255, 255, 255, 0.78);
+}
+.footer-logo h3 { color: #FFFFFF; }
+.footer-logo p { color: rgba(255, 255, 255, 0.62); font-style: italic; }
+.footer h4 { color: rgba(255, 255, 255, 0.5); letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.8rem; }
+.footer-links a,
+.footer-contact p { color: rgba(255, 255, 255, 0.78); }
+.footer-links a:hover { color: var(--sand); }
+.footer-contact p i { color: var(--sand); }
+.footer-social .social-link {
+    background-color: transparent;
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+}
+.footer-social .social-link:hover {
+    background-color: var(--sand);
+    border-color: var(--sand);
+    color: var(--green-deep);
+}
+.footer-bottom {
+    border-top-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.45);
+}
+
+/* Mobile nav panel: cream instead of white */
+.nav.active { background: rgba(247, 244, 238, 0.98); }
+
+/* Palette v2: cream cards on the white services section (desktop) */
+@media (min-width: 769px) {
+    .services-preview .service-card { background-color: var(--cream); }
+    .services-preview .service-card:hover { background-color: var(--wix-surface); }
 }
