@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="uk-UA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Pro Prorab — прототип нового дизайну головної</title>
+    <!-- Prototype: keep it out of search until approved (avoids duplicate content with the live homepage) -->
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#1F5440">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header" id="siteHeader">
+        <div class="container">
+            <a href="#top" class="brand" aria-label="Pro Prorab — головна">
+                <span class="brand__name">Pro Prorab</span>
+                <span class="brand__tag">Студія дизайну та ремонту · Київ</span>
+            </a>
+            <nav class="nav" aria-label="Основна навігація">
+                <a href="#portfolio">Проєкти</a>
+                <a href="#services">Послуги</a>
+                <a href="#about">Про студію</a>
+                <a href="#faq">Питання</a>
+                <a href="#contact">Контакти</a>
+            </nav>
+            <div class="header-actions">
+                <a href="tel:+380664880913" class="header-phone">+38 (066) 488-09-13</a>
+                <a href="#contact" class="btn btn--primary">Розрахувати вартість</a>
+            </div>
+            <button class="burger" id="burger" aria-label="Відкрити меню" aria-expanded="false" aria-controls="mobileMenu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <nav aria-label="Мобільна навігація">
+            <a href="#portfolio">Проєкти</a>
+            <a href="#services">Послуги</a>
+            <a href="#about">Про студію</a>
+            <a href="#faq">Питання</a>
+            <a href="#contact">Контакти</a>
+        </nav>
+        <div class="mobile-menu__foot">
+            <a href="tel:+380664880913">+38 (066) 488-09-13</a>
+            <a href="https://t.me/+380664880913" target="_blank" rel="noopener noreferrer">Telegram</a>
+            <a href="https://www.instagram.com/pro_prorab" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="#contact" class="btn btn--sand">Розрахувати вартість</a>
+        </div>
+    </div>
+
+    <main id="top">
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero__copy">
+                <span class="eyebrow reveal">Будівельно-дизайнерська студія · Київ і область</span>
+                <h1 class="reveal" data-delay="1">Від ідеї до простору, що <em class="accent">надихає</em></h1>
+                <p class="lead reveal" data-delay="2">Дизайн-проєкт, ремонт під ключ і меблі на замовлення — в одних руках. Ви отримуєте готовий простір і збережені час, гроші й нерви.</p>
+                <div class="hero__actions reveal" data-delay="3">
+                    <a href="#contact" class="btn btn--primary">Розрахувати вартість</a>
+                    <a href="#portfolio" class="link-arrow">Дивитися проєкти
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                </div>
+                <div class="hero__meta reveal" data-delay="4">
+                    <span>Власна команда</span>
+                    <span>Фіксована ціна</span>
+                    <span>Під ключ</span>
+                </div>
+            </div>
+            <div class="hero__media">
+                <img src="/images/hero/hero-bg-2.jpg" alt="Світлий сучасний інтер'єр вітальні з кухнею — приклад роботи студії Pro Prorab" fetchpriority="high">
+                <div class="hero__badge">
+                    <strong>Дизайн · Ремонт · Меблі</strong>
+                    <span>Весь цикл — від першого ескізу до заселення</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ticker -->
+        <div class="ticker" aria-hidden="true">
+            <div class="ticker__track">
+                <span class="ticker__item">Дизайн-проєкт інтер'єру</span>
+                <span class="ticker__item">Ремонт квартир під ключ</span>
+                <span class="ticker__item">Меблі на замовлення</span>
+                <span class="ticker__item">Київ і область</span>
+                <span class="ticker__item">Власна команда без субпідряду</span>
+                <span class="ticker__item">Фіксована ціна в договорі</span>
+                <span class="ticker__item">Дизайн-проєкт інтер'єру</span>
+                <span class="ticker__item">Ремонт квартир під ключ</span>
+                <span class="ticker__item">Меблі на замовлення</span>
+                <span class="ticker__item">Київ і область</span>
+                <span class="ticker__item">Власна команда без субпідряду</span>
+                <span class="ticker__item">Фіксована ціна в договорі</span>
+            </div>
+        </div>
+
+        <!-- Portfolio -->
+        <section class="section" id="portfolio">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <span class="eyebrow reveal">Портфоліо</span>
+                        <h2 class="reveal" data-delay="1">Проєкти, якими ми пишаємось</h2>
+                    </div>
+                    <p class="aside reveal" data-delay="2">Квартири в київських ЖК, заміські будинки та комерційні простори — кожен проєкт ми ведемо від ідеї до фінального прибирання.</p>
+                </div>
+                <div class="portfolio-grid">
+                    <figure class="tile reveal" data-gallery="lakewood" data-name="ЖК Грейт" data-type="Квартира · Київ">
+                        <img src="/images/portfolio/lakewood/12.jpg" alt="Дизайн інтер'єру квартири у ЖК Грейт, Київ" loading="lazy">
+                        <span class="tile__count">26 фото</span>
+                        <figcaption class="tile__cap"><span class="tile__name">ЖК Грейт</span><span class="tile__type">Квартира · Київ</span></figcaption>
+                    </figure>
+                    <figure class="tile reveal" data-delay="1" data-gallery="theMoon" data-name="The Moon" data-type="Будинок · Київська обл.">
+                        <img src="/images/portfolio/the-moon/11.jpg" alt="Заміський будинок The Moon у японському стилі" loading="lazy">
+                        <span class="tile__count">12 фото</span>
+                        <figcaption class="tile__cap"><span class="tile__name">The Moon</span><span class="tile__type">Будинок</span></figcaption>
+                    </figure>
+                    <figure class="tile reveal" data-delay="2" data-gallery="sofiaResidence" data-name="ЖК Софія Резиденс" data-type="Квартира · Київ">
+                        <img src="/images/portfolio/sofia-residence/4.jpg" alt="Квартира в ЖК Софія Резиденс, Київ" loading="lazy">
+                        <span class="tile__count">8 фото</span>
+                        <figcaption class="tile__cap"><span class="tile__name">Софія Резиденс</span><span class="tile__type">Квартира</span></figcaption>
+                    </figure>
+                    <figure class="tile reveal" data-delay="1" data-gallery="great" data-name="Lakewood" data-type="Будинок · 4,5 км від Києва">
+                        <img src="/images/portfolio/great/1.jpg" alt="Інтер'єр будинку в котеджному містечку Lakewood" loading="lazy">
+                        <span class="tile__count">21 фото</span>
+                        <figcaption class="tile__cap"><span class="tile__name">Lakewood</span><span class="tile__type">Будинок</span></figcaption>
+                    </figure>
+                    <figure class="tile reveal" data-delay="2" data-gallery="respublika" data-name="ЖК Республіка" data-type="Квартира · Київ">
+                        <img src="/images/portfolio/respublika/5.jpg" alt="Квартира у ЖК Республіка, Київ" loading="lazy">
+                        <span class="tile__count">7 фото</span>
+                        <figcaption class="tile__cap"><span class="tile__name">ЖК Республіка</span><span class="tile__type">Квартира</span></figcaption>
+                    </figure>
+                    <figure class="tile reveal" data-delay="3" data-gallery="drVoice" data-name="Клініка Dr. Voice" data-type="Комерція · Київ">
+                        <img src="/images/portfolio/dr-voice/5.jpg" alt="Ремонт клініки Dr. Voice у Києві" loading="lazy">
+                        <span class="tile__count">11 фото</span>
+                        <figcaption class="tile__cap"><span class="tile__name">Dr. Voice</span><span class="tile__type">Комерція</span></figcaption>
+                    </figure>
+                </div>
+                <div class="portfolio-foot reveal">
+                    <a href="/#portfolio" class="btn btn--ghost">Усі проєкти на поточному сайті</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="section services" id="services">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <span class="eyebrow reveal">Послуги</span>
+                        <h2 class="reveal" data-delay="1">Три напрями — один результат</h2>
+                    </div>
+                    <p class="aside reveal" data-delay="2">Можна замовити окремо кожен етап або весь цикл одразу — тоді дизайн, ремонт і меблі узгоджені між собою з першого дня.</p>
+                </div>
+                <div class="service-rows">
+                    <a href="/dyzain-interieru-kyiv/" class="service-row reveal">
+                        <span class="service-row__num">01</span>
+                        <span class="service-row__title">Дизайн-проєкт інтер'єру</span>
+                        <span class="service-row__desc">Обмірний план, планування, 3D-візуалізації, підбір матеріалів і меблів. Ви бачите результат до початку ремонту — і не платите за переробки.</span>
+                        <span class="service-row__price">від $22/м² · 2–7 тижнів</span>
+                        <span class="service-row__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+                    <a href="/remont-kvartyr-kyiv/" class="service-row reveal" data-delay="1">
+                        <span class="service-row__num">02</span>
+                        <span class="service-row__title">Ремонт квартир під ключ</span>
+                        <span class="service-row__desc">Демонтаж, чорнові роботи, електрика й сантехніка, оздоблення, меблі, прибирання. Одна команда, один договір, фіксована ціна.</span>
+                        <span class="service-row__price">від $280/м² · від 3 місяців</span>
+                        <span class="service-row__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+                    <a href="/mebli-na-zamovlennia-kyiv/" class="service-row reveal" data-delay="2">
+                        <span class="service-row__num">03</span>
+                        <span class="service-row__title">Меблі на замовлення</span>
+                        <span class="service-row__desc">Кухні, шафи, гардеробні та м'які меблі під ваш простір: 3D-заміри, ескізи, підбір фурнітури, виготовлення та монтаж.</span>
+                        <span class="service-row__price">вартість після замірів і ТЗ</span>
+                        <span class="service-row__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="section about" id="about">
+            <div class="container">
+                <div class="about__grid">
+                    <div>
+                        <span class="eyebrow reveal">Про студію</span>
+                        <p class="about__statement reveal" data-delay="1">Ми беремо на себе весь ремонт — від першої ідеї до розстановки меблів. Ви отримуєте готовий простір, а не список підрядників.</p>
+                        <p class="about__text reveal" data-delay="2">Pro Prorab — команда, яка створює інтер'єри, що відображають характер господарів. Власні майстри, чітка організація та контроль якості на кожному етапі — без зайвого стресу для вас.</p>
+                    </div>
+                    <div class="about__media reveal" data-delay="2">
+                        <img src="/images/about/about-photo.png" alt="Команда студії Pro Prorab" loading="lazy">
+                    </div>
+                </div>
+                <div class="principles">
+                    <div class="principle reveal">
+                        <span class="principle__num">01</span>
+                        <h3>Власна команда</h3>
+                        <p>Електрики, сантехніки, оздоблювальники, монтажники — штатні спеціалісти, без субпідряду.</p>
+                    </div>
+                    <div class="principle reveal" data-delay="1">
+                        <span class="principle__num">02</span>
+                        <h3>Фіксована ціна</h3>
+                        <p>Кошторис після безкоштовного виїзду, ціна й терміни зафіксовані в договорі.</p>
+                    </div>
+                    <div class="principle reveal" data-delay="2">
+                        <span class="principle__num">03</span>
+                        <h3>Прозорий процес</h3>
+                        <p>Регулярні звіти про хід робіт і витрачені кошти — ви завжди знаєте, що відбувається на об'єкті.</p>
+                    </div>
+                    <div class="principle reveal" data-delay="3">
+                        <span class="principle__num">04</span>
+                        <h3>Сервіс після здачі</h3>
+                        <p>Залишаємось на зв'язку: 4 безкоштовні сервісні виїзди протягом 2 років після завершення.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lead form -->
+        <section class="section lead-section" id="contact">
+            <div class="container">
+                <div class="lead-grid">
+                    <div>
+                        <span class="eyebrow eyebrow--light reveal">Розрахунок вартості</span>
+                        <h2 class="reveal" data-delay="1">Розрахуємо вартість вашого ремонту</h2>
+                        <p class="lead reveal" data-delay="2">Залиште контакти — передзвонимо, уточнимо деталі та назвемо орієнтовну вартість. Або напишіть нам одразу.</p>
+                        <div class="lead-contacts reveal" data-delay="3">
+                            <a href="tel:+380664880913">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+                                +38 (066) 488-09-13
+                            </a>
+                            <a href="https://t.me/+380664880913" target="_blank" rel="noopener noreferrer">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                                Написати в Telegram
+                            </a>
+                            <a href="https://www.instagram.com/pro_prorab" target="_blank" rel="noopener noreferrer">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
+                                @pro_prorab в Instagram
+                            </a>
+                        </div>
+                    </div>
+                    <form class="form-card reveal" data-delay="2" id="leadForm" novalidate>
+                        <h3>Безкоштовна консультація</h3>
+                        <p>Заповніть форму — і ми зв'яжемося з вами впродовж робочого дня.</p>
+                        <div class="form-grid">
+                            <div class="field">
+                                <label for="fName">Ім'я</label>
+                                <input type="text" id="fName" name="name" placeholder="Як до вас звертатись" autocomplete="name" required>
+                            </div>
+                            <div class="field">
+                                <label for="fPhone">Телефон</label>
+                                <input type="tel" id="fPhone" name="phone" placeholder="+38 (0__) ___-__-__" autocomplete="tel" inputmode="tel" required>
+                            </div>
+                            <div class="field">
+                                <label for="fArea">Площа, м²</label>
+                                <input type="number" id="fArea" name="area" placeholder="напр. 68" inputmode="numeric" min="10" max="2000">
+                            </div>
+                            <div class="field">
+                                <label for="fService">Що потрібно</label>
+                                <select id="fService" name="service">
+                                    <option>Ремонт під ключ</option>
+                                    <option>Дизайн-проєкт</option>
+                                    <option>Дизайн + ремонт</option>
+                                    <option>Меблі на замовлення</option>
+                                    <option>Ще не визначились</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn--primary">Отримати розрахунок</button>
+                        <p class="form-note">Натискаючи кнопку, ви погоджуєтесь на обробку контактних даних для зв'язку з вами.</p>
+                        <div class="form-success" id="formSuccess" role="status">
+                            Дякуємо! Ми відкрили лист із вашою заявкою — надішліть його, або просто <a href="https://t.me/+380664880913" target="_blank" rel="noopener noreferrer">напишіть нам у Telegram</a>.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section faq" id="faq">
+            <div class="container">
+                <div class="faq__grid">
+                    <div>
+                        <span class="eyebrow reveal">Часті питання</span>
+                        <h2 class="reveal" data-delay="1">Що зазвичай запитують перед ремонтом</h2>
+                        <p class="lead reveal" data-delay="2">Не знайшли своє питання — зателефонуйте або напишіть, відповімо особисто.</p>
+                    </div>
+                    <div class="faq-list reveal" data-delay="2">
+                        <details class="faq-item">
+                            <summary>Скільки коштує ремонт квартири під ключ у Києві?<span class="plus" aria-hidden="true"></span></summary>
+                            <p>Вартість робіт — від $280 за м²; матеріали розраховуються окремо у базовому, середньому або преміум сегменті. Точну ціну фіксуємо в договорі після безкоштовного виїзду майстра на об'єкт.</p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>Скільки часу триває ремонт?<span class="plus" aria-hidden="true"></span></summary>
+                            <p>Орієнтовно: однокімнатна квартира — 2–3 місяці, двокімнатна — 3–4, трикімнатна — 4–6, заміський будинок — від 6 місяців. Дату завершення фіксуємо в договорі до старту робіт.</p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>Чи потрібен дизайн-проєкт перед ремонтом?<span class="plus" aria-hidden="true"></span></summary>
+                            <p>Не обов'язково, але він економить гроші: ви бачите інтер'єр у 3D до закупівлі матеріалів, а точні специфікації виключають переробки, які коштують у 3–5 разів дорожче. Клієнтам, що замовляють дизайн і ремонт разом, даємо знижку на дизайн.</p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>Ви працюєте в Київській області?<span class="plus" aria-hidden="true"></span></summary>
+                            <p>Так — квартири, заміські будинки та комерційні приміщення у Києві та по всій області. У портфоліо є будинки в Lakewood за 4,5 км від Києва та The Moon у Київській області.</p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="brand">
+                        <span class="brand__name">Pro Prorab</span>
+                        <span class="brand__tag">Студія дизайну та ремонту · Київ</span>
+                    </div>
+                    <p class="footer-slogan">«Від ідеї до простору, що надихає»</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/pro_prorab" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
+                        </a>
+                        <a href="https://t.me/+380664880913" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Послуги</h4>
+                    <a href="/remont-kvartyr-kyiv/">Ремонт квартир під ключ</a>
+                    <a href="/dyzain-interieru-kyiv/">Дизайн інтер'єру</a>
+                    <a href="/mebli-na-zamovlennia-kyiv/">Меблі на замовлення</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Навігація</h4>
+                    <a href="#portfolio">Проєкти</a>
+                    <a href="#about">Про студію</a>
+                    <a href="#faq">Часті питання</a>
+                    <a href="#contact">Контакти</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Контакти</h4>
+                    <a href="tel:+380664880913">+38 (066) 488-09-13</a>
+                    <a href="https://t.me/+380664880913" target="_blank" rel="noopener noreferrer">Telegram</a>
+                    <a href="https://www.instagram.com/pro_prorab" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="mailto:Natali_shokodko@ukr.net">Natali_shokodko@ukr.net</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>2026 © Pro Prorab. Всі права захищені.</span>
+                <span>Прототип нового дизайну · <a href="/">переглянути поточний сайт</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile sticky bar -->
+    <div class="mobile-bar" aria-label="Швидкий зв'язок">
+        <a href="tel:+380664880913" class="btn btn--primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+            Зателефонувати
+        </a>
+        <a href="https://t.me/+380664880913" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            Telegram
+        </a>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Галерея проєкту" aria-hidden="true">
+        <button class="lightbox__btn lightbox__close" id="lbClose" aria-label="Закрити">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+        <button class="lightbox__btn lightbox__prev" id="lbPrev" aria-label="Попереднє фото">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+        </button>
+        <img id="lbImage" alt="">
+        <button class="lightbox__btn lightbox__next" id="lbNext" aria-label="Наступне фото">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <div class="lightbox__meta"><strong id="lbTitle"></strong><span id="lbCounter"></span></div>
+    </div>
+
+    <script src="script.js?v=1"></script>
+</body>
+</html>
